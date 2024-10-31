@@ -1,1 +1,58 @@
 /*  your css code here. If applicable */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1000px;
+}
+
+.panel {
+    flex: 1;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    margin: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.panel .img-text {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.panel.active {
+    flex: 4;
+}
+
+.panel.active .img-text {
+    opacity: 1;
+}
+
+.panel:not(.active) {
+    flex: 0.5;
+    filter: brightness(70%);
+}
